@@ -1,107 +1,86 @@
-# SPYRA Studios — Official Portfolio Website
+# Spyra Studios — Official Portfolio Website
 
-Welcome to the official portfolio website for **SPYRA** (Spira), featuring both creative branches:
-- **Spyra Games**: Indie game production showcase (PC, WebGL, Consoles).
-- **Spyra Labs**: Game development assets, tools, physics engines, and shaders (featuring **Simple Flags**).
+Official static portfolio website for **Spyra Studios** — indie game development studio building fun, creative, and meaningful games.
+
+Featuring:
+- **Room to Breathe** — A cozy logic puzzle game about space and comfort (Available on Steam).
+- **Moon Swarm** — Idle/arcade moon defense game (Play Demo on Steam).
 
 ---
 
-## 📁 Project & Folder Structure
+## 🚀 GitHub Pages Deployment Guide
 
-This project is built using vanilla **HTML5**, **CSS3**, and **JavaScript** with zero external runtime build dependencies. It is 100% portable, extremely fast, and ready to host immediately on any static web host.
+This website is built with pure, static **HTML5**, **CSS3**, and **JavaScript**. It has zero build steps and is ready to deploy directly to **GitHub Pages**.
+
+### 📦 Files & Folders Required for GitHub
+
+Upload the following files and folders to the root of your GitHub repository:
 
 ```text
-SPYRA Portfolio website/
-│
-├── index.html                   # Main landing page & portfolio showcase
-├── favicon.png                  # Browser tab favicon (Spyra mark)
-├── README.md                    # Documentation & hosting guide
-│
+├── index.html                   # Main website homepage
+├── .nojekyll                    # Tells GitHub Pages to bypass Jekyll processing
+├── .gitignore                   # Ignores local raw assets
 ├── css/
-│   ├── style.css                # Obsidian Emerald design system, layouts & tokens
-│   └── animations.css           # Micro-interactions, glows, keyframes & pulses
-│
+│   └── style.css                # Official design styles & checkerboard theme
 ├── js/
-│   └── main.js                  # Dynamic branch switching, live flag simulator,
-│                                # playable arcade mini-game, modals & sound synthesis
-│
+│   └── main.js                  # Video/GIF modal viewer & interactive logic
 └── assets/
     ├── icons/
-    │   └── favicon.png          # High-resolution favicon icon
-    │
-    └── images/
-        ├── studio-bg.jpg        # Studio HQ ambient background
-        │
-        ├── branding/            # Official company logos and emblems
-        │   ├── spyra-mark.png            # Geometric 'S' mark (original)
-        │   ├── spyra-mark-trans.png      # Geometric 'S' mark (transparent background)
-        │   ├── spyra-logo-white.png      # White logo on black background
-        │   ├── spyra-logo-white-trans.png# White logo (transparent background)
-        │   ├── spyra-logo-black.png      # Black logo on white background
-        │   └── spyra-logo-black-trans.png# Black logo (transparent background)
-        │
-        ├── games/               # Spyra Games cover artwork & banners
-        │   ├── neon-drift.jpg        # Neon Drift: Overdrive
-        │   ├── chrono-weaver.jpg     # Chrono Weaver: Puzzle Island
-        │   └── vanguard-protocol.jpg # Vanguard Protocol (Mech Roguelite)
-        │
-        └── labs/                # Spyra Labs tool banners & showcases
-            ├── simple-flags.png      # Simple Flags flagship banner (from your upload!)
-            ├── gridmaster-3d.jpg     # GridMaster 3D Procedural Tool
-            └── stylized-shaders.jpg  # Stylized Water & Toon Shaders
+    │   └── favicon.png          # Browser favicon
+    ├── images/
+    │   ├── branding/
+    │   │   └── spyra-logo.png   # Official geometric S logo
+    │   └── games/               # Game capsules, hero starship & gameplay GIFs
+    └── videos/
+        ├── room-to-breathe-trailer.mp4
+        └── moon-swarm-trailer.mp4
 ```
 
----
-
-## 🎨 Theme & Brand Styling
-The visual aesthetic was derived directly from your company's identity:
-- **Primary Brand Colors**:
-  - **Spyra Emerald**: `#10b981`, `#22c55e`, `#00f59b` (inspired by the green checkerboard isometric grid).
-  - **Game Amber / Gold**: `#fcd561`, `#fbbf24` (inspired by the Simple Flags button).
-  - **Obsidian Dark Canvas**: `#070a0d`, `#0e1418` (high-contrast AAA studio aesthetic).
-  - **Flag Accents**: Neon Magenta `#f43f5e`, Electric Blue `#1e88e5`, Pirate Black `#212121`.
-- **Typography**: Google Fonts `Outfit` (matching the geometric modern Spyra wordmark), `Space Grotesk` (tech stats & badges), and `Inter` (body copy).
+> **Note:** The `My Assets/` folder is your local raw backup directory containing uncompressed source duplicates; it is excluded via `.gitignore` and **does not** need to be uploaded to GitHub.
 
 ---
 
-## 🕹️ Interactive Features Included
-1. **Dual Branch Switcher**: Instant switching between `All Creations`, `🎮 Spyra Games`, and `⚡ Spyra Labs`.
-2. **Simple Flags Live Sandbox**: A real-time HTML5 Canvas cloth & wind physics simulator where visitors can test wind turbulence, swap between 5 fabric colors, and select 4 emblem glyphs (Sword, Crown, Skull, Spyra Mark).
-3. **Playable Web Racer Mini-Game**: In-browser playable arcade trial (`Neon Drift: Speed Trial`) with keyboard controls (`A/D` or Arrow Keys), dodging hazard drones and collecting energy cores.
-4. **Interactive Deep Dive Modals**: Rich popups displaying technical specs, game engines, platform compatibility, and feature lists.
-5. **Futuristic Sound FX Engine**: Built-in Web Audio API synthesizer that produces subtle sci-fi clicks and chimes (with a toggle in the navbar).
-6. **Animated Stats Counter**: Counts up dynamically on scroll (+3 Games, +12 Tools, 58K+ Downloads, 99.4% Rating).
-7. **Contact & Collaboration Form**: Complete form with validation and instant status feedback.
+### Step-by-Step: Deploy to GitHub Pages
+
+#### Method A: Using Git CLI (Recommended)
+
+1. Open PowerShell or Terminal in this folder:
+   ```bash
+   git init
+   git add .
+   git commit -m "Deploy Spyra website to GitHub Pages"
+   ```
+
+2. Create a new repository on GitHub (e.g. `spyra-portfolio` or `spyra-portfolio.github.io`).
+
+3. Link your remote repository and push:
+   ```bash
+   git branch -M main
+   git remote add origin https://github.com/<YOUR-USERNAME>/<YOUR-REPO-NAME>.git
+   git push -u origin main
+   ```
+
+4. Enable GitHub Pages:
+   - Go to your repository on GitHub.
+   - Click **Settings** → **Pages** (in the left sidebar).
+   - Under **Build and deployment > Source**, choose **Deploy from a branch**.
+   - Under **Branch**, select `main` and folder `/(root)`.
+   - Click **Save**.
+
+Your website will be live in ~60 seconds at:
+`https://<YOUR-USERNAME>.github.io/<YOUR-REPO-NAME>/`
 
 ---
 
-## 🚀 How to Host This Website (Free Options)
+#### Method B: Drag & Drop via GitHub Web UI
 
-Because this website uses standard HTML, CSS, and JavaScript, you can host it for free in under 2 minutes:
-
-### Option 1: Netlify (Easiest — 30 Seconds)
-1. Go to [https://app.netlify.com/drop](https://app.netlify.com/drop).
-2. Drag and drop the entire `SPYRA Portfolio website` folder onto the webpage.
-3. Your website is instantly live with a free SSL certificate! You can connect your custom domain (e.g. `spyragames.com`).
-
-### Option 2: GitHub Pages
-1. Create a new repository on [GitHub](https://github.com) named `spyra-portfolio`.
-2. Push or upload all files from this folder directly into the repository root.
-3. In GitHub, go to **Settings > Pages**.
-4. Under **Branch**, select `main` (or `master`) and folder `/ (root)`, then click **Save**.
-5. Your website will be live at `https://<your-username>.github.io/spyra-portfolio/`.
-
-### Option 3: Vercel
-1. Install Vercel CLI (`npm i -g vercel`) or go to [vercel.com](https://vercel.com).
-2. Import the folder or GitHub repository and click **Deploy**.
-
----
-
-## 💻 How to Run Locally
-
-You can simply double-click `index.html` in your file explorer to open it in any web browser!
-
-Or, run a local preview server:
-- **VS Code**: Install the "Live Server" extension, right-click `index.html`, and select **Open with Live Server**.
-- **Python** (if installed): `python -m http.server 8000`
-- **Node.js** (if installed): `npx serve .`
+1. Create a new GitHub repository at [github.com/new](https://github.com/new).
+2. Click **"uploading an existing file"**.
+3. Drag and drop:
+   - `index.html`
+   - `.nojekyll`
+   - The `css` folder
+   - The `js` folder
+   - The `assets` folder
+4. Commit changes directly to `main`.
+5. Go to **Settings > Pages**, choose `main` branch and `/(root)`, and click **Save**.
